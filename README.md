@@ -1,8 +1,9 @@
 # aitiGuruTZ
 Тестовое задание для вакансии Junior Backend в компанию aitiGuru
 
-Файл msSqlMain - aitiGuruTZ - dbo.png - схема данных БД
-Файл Гостева Junior Backend запросы.txt - запросы для БД
+Файл msSqlMain - aitiGuruTZ - dbo.png - схема данных БД.
+
+Файл Гостева Junior Backend запросы.txt - запросы для БД.
 
 # Структура БД
 
