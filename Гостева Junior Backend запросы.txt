@@ -1,0 +1,24 @@
+/* ============================
+   Получение информации о сумме товаров заказанных под каждого клиента (Наименование клиента, сумма)
+============================= */
+SELECT 
+    c.CustomerID,
+    c.Name AS Наименование_клиента,
+    SUM(ol.LineTotal) AS Сумма
+FROM dbo.Customer c
+JOIN dbo.[Order] o ON c.CustomerID = o.CustomerID
+JOIN dbo.OrderLine ol ON o.OrderID = ol.OrderID
+GROUP BY c.CustomerID, c.Name
+ORDER BY Сумма DESC;
+
+/* ============================
+   Найти количество дочерних элементов первого уровня вложенности для категорий номенклатуры.
+============================= */
+SELECT 
+    parent.CategoryID,
+    parent.Name AS Категория,
+    COUNT(child.CategoryID) AS Количество_дочерних_элементов
+FROM dbo.Category parent
+LEFT JOIN dbo.Category child ON parent.CategoryID = child.ParentID
+GROUP BY parent.CategoryID, parent.Name
+ORDER BY Количество_дочерних_элементов DESC;
